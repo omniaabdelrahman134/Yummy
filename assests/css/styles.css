@@ -1,0 +1,44 @@
+.navbar{
+    width: 5%;;
+}
+
+.meal-layer{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color:#f9f6f6ca;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.position-relative:hover .meal-layer{
+    opacity: 1;
+    top: 0;
+}
+
+.sidenav{
+    width: 200px;
+}
+
+.links li {
+  position: relative;
+  top: 50px; /* start position */
+  transition: top 0.4s ease;
+  opacity: 0;
+  color: white;
+}
+
+.loading-screen{
+    z-index: 999;
+    display: flex;
+    color: white;
+}
+
+.inner-loading-screen{
+    position: absolute;
+    z-index: 9;
+    background-color: #0D0D0D;
+    display: flex;
+}
+
+

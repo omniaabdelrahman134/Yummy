@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+
+
+    <!-- =============================== Animation ========================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- =============================== Fonts ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <!-- =============================== FontAwesome ========================== -->
+    <link rel="stylesheet" href="assests/Fonts/all.min.css">
+
+    <!-- =============================== Bootsrap CSS ========================== -->
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+
+    <!-- =============================== CSS ========================== -->
+    <link rel="stylesheet" href="./assests/css/all.css ">
+</head>
+
+<body class="vh-100">
+
+    <div
+        class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+    <!-- =============================== Side NavBar ========================== -->
+
+    <nav class="vh-100 position-fixed z-3 top-0 start-0 end-0 bottom-0 d-flex ">
+        <div id="sideNav" class="h-100 sidenav bg-black col-12 d-flex flex-column justify-content-between">
+            <ul class="links d-flex flex-column gap-3 text-capitalize mt-4 px-3">
+                <li id="Search" role="button">search</li>
+
+                <li id="categories" role="button">categories</li>
+
+                <li id="area" role="button">area</li>
+
+                <li id="ingredinets" role="button">ingredients</li>
+
+                <li id="contact" role="button">contact</li>
+            </ul>
+            <div class="mb-3 px-2 text-white">
+                <ul class="d-flex p-0 mb-1">
+                    <a href="">
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                    </a>
+                    <a href="">
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                    </a>
+                    <a href="">
+                        <li><i class="fa-solid fa-globe"></i></li>
+                    </a>
+                </ul>
+                <span>Copyright Â© 2019 All Rights
+                    Reserved.</span>
+            </div>
+        </div>
+        <div class="navbar w-100 h-100 d-flex flex-column justify-content-between bg-white">
+            <img src="./assests/Images/logo.png" alt="logo" class="img-fluid align-self-start mt-3 px-1">
+            <button id="btnOpen" class="btn"> <i class="fa-solid text-black fs-3 fa-bars"></i> </button>
+            <button id="btnClose" onclick="CloseNav()" class="btn d-none"> <i
+                    class="fa-solid text-black fs-3 fa-x"></i></button>
+            <div class="text-black d-flex flex-column gap-3 mb-3">
+                <a href=""><i class="fa-solid fa-globe text-black"></i></a>
+                <a href=""><i class="fa-solid fa-share-nodes text-black"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =============================== Search Bar ========================== -->
+    <search id="searchBtn" class="d-none">
+        <div class="search-bar py-3 px-2">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="search_by_name"
+                            class="bg-transparent border-1  rounded-1 border-white w-100 p-2 text-white"
+                            placeholder="Search By Name...">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="search_by_letter" maxlength="1"
+                            class="bg-transparent border-1 rounded-1 border-white w-100 p-2 text-white"
+                            placeholder="Search By First Letter...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </search>
+    <!-- =============================== Main Page ========================== -->
+
+    <main class=" my-5">
+        <div class="container">
+            <div id="meals" class="row g-4">
+                <!-- <div class="col-md-3">
+                    <div class="position-relative rounded-2 bg-danger overflow-hidden">
+                        <img src="./assests/Images/utqnjv1763598650.jpg" alt="meal1" class="rounded img-fluid">
+                        <div
+                            class="meal-layer position-absolute d-flex flex-column justify-content-center align-items-center text-white text-center p-2">
+                            <h3 class="text-black">Kabse</h3>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </main>
+    <!-- =============================== Description Page ========================== -->
+
+    <section class="mt-5 text-white">
+        <div class="container">
+            <div id="description" class="row my-4">
+                <!-- <div class="col-md-4">
+                    <img src="./assests/Images/utqnjv1763598650.jpg" alt="meal1" class="img-fluid rounded">
+                    <h3>Kabse</h3>
+                </div>
+                <div class="col-md-8 text-capitalize">
+                    <h2>instructions</h2>
+                    <p>1 Caramelize the chicken with olive oil then add a maggi cube and boil it for around 30 minutes.
+                        2 In another pot, add all the veggies and caramelize them till they are soft. 3 Once everything
+                        is done, add the rice, raisins & spices to the veggies and add 2 and a half cups of water for
+                        the rice to cook. 4 Once the rice is done put everything in the oven.</p>
+                    <h3><strong>Area</strong> : Egyptian</h3>
+                    <h3><strong>Category</strong> : Side</h3>
+                    <h3>Recipes :</h3>
+                    <ul class="d-flex flex-wrap p-0 gap-2">
+                        <li class="alert alert-info m-2 p-1"">ingredient 1</li>
+                        <li class=" alert alert-info m-2 p-1"">ingredient 2</li>
+                        <li class="alert alert-info m-2 p-1"">ingredient 3</li>
+                        <li class=" alert alert-info m-2 p-1"">ingredient 4</li>
+                        <li class="alert alert-info m-2 p-1"">ingredient 1</li>
+                        <li class=" alert alert-info m-2 p-1"">ingredient 2</li>
+                        <li class="alert alert-info m-2 p-1"">ingredient 3</li>
+                        <li class=" alert alert-info m-2 p-1"">ingredient 4</li>
+                    </ul>
+                    <h3>tags :</h3>
+                    <a href="#"><button class="btn btn-success text-white text-capitalize me-2">source</button></a>
+                    <a href="#"><button class="btn btn-danger text-white text-capitalize">youtube</button></a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================== Categories ========================== -->
+    <section id="CategoriesElements" class="d-none my-5">
+        <div class="container">
+            <div id="catEl" class="row g-4">
+                <!-- <div class="col-md-3">
+                    <div class="position-relative rounded-2 overflow-hidden">
+                        <img src="./assests/Images/beef.png" alt="meal1" class=" rounded img-fluid">
+                        <div
+                            class="meal-layer position-absolute d-flex flex-column justify-content-center align-items-center text-white text-center p-2">
+                            <h3 class="text-black">Kabse</h3>
+                            <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                                nobis voluptatibus</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================== Areas ========================== -->
+
+    <section id="areaEl" class="d-none my-5">
+        <div class="container">
+            <div id="areaElements" class="row g-4">
+                <!-- <div class="col-md-3">
+                    <div class=" text-capitalize text-white text-center ">
+                        <i class="mb-1 fa-solid fa-house-laptop fa-4x"></i>
+                        <div>
+                            <h3>american</h3>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================== Ingredients ========================== -->
+
+    <section id="ingredinetsElements" class="d-none my-5">
+        <div class="container">
+            <div id="ingredinetsEl" class="row g-4">
+                <!-- <div class="col-md-3">
+                    <div class=" text-capitalize text-white text-center ">
+                        <i class="fa-solid fa-drumstick-bite fa-4x"></i>
+                        <div>
+                            <h3>chicken</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consequuntur earum cum tenetur.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================== Contact Us ========================== -->
+    <section id="contactEl" class=" h-100 d-none d-flex justify-content-center align-items-center">
+        <div id="contactElement" class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <input id="inputName" type="text" class="mb-3 p-2 w-100 rounded-2 border-1 border-secondary"
+                        placeholder="Enter Your Name">
+                    <div id="nameAlert" class="alert alert-danger d-none">Special characters and numbers not allowed
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="inputPhone" type="number" class="mb-3 p-2 w-100 rounded-2 border-1 border-secondary"
+                        placeholder="Enter Your Phone">
+                    <div id="phoneAlert" class="alert alert-danger d-none">Enter valid Phone Number</div>
+
+                </div>
+                <div class="col-md-6">
+                    <input id="inputAge" type="number" class="mb-3 p-2 w-100 rounded-2 border-1 border-secondary"
+                        placeholder="Enter Your Age">
+                    <div id="AgeAlert" class="alert alert-danger d-none">Enter valid age</div>
+                </div>
+                <div class="col-md-6">
+                    <input id="inputEmail" type="email" class="mb-3 p-2 w-100 rounded-2 border-1 border-secondary"
+                        placeholder="Enter Your Email">
+                    <div id="EmailAlert" class="alert alert-danger d-none">Email not valid *exemple@yyy.zzz</div>
+                </div>
+                <div class="col-md-6">
+                    <input id="inputPass" type="password" class="mb-3 p-2 w-100 rounded-2 border-1 border-secondary"
+                        placeholder="Enter Your Password">
+                    <div id="passAlert" class="alert alert-danger d-none">Enter valid password *Minimum eight
+                        characters, at least one
+                        letter and one number:*</div>
+                </div>
+                <div class="col-md-6">
+                    <input id="inputRePass" type="password" class="mb-3 p-2 w-100 rounded-2 border-1 border-secondary"
+                        placeholder="Re-Enter Your Password">
+                    <div id="repassAlert" class="alert alert-danger d-none">Enter valid repassword </div>
+                </div>
+                <div class=" w-100  text-center">
+                    <button id="submitBtn" type="submit" class="btn btn-outline-danger text-white text-capitalize ">submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="assests/js/bootstrap.bundle.min.js"></script>
+    <script src="./assests/js/all.min.js"></script>
+    <script src="./assests/js/jquery-3.6.0.min.js"></script>
+    <script src="assests/js/index.js"></script>
+</body>
+
+</html>
