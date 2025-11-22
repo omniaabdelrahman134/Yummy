@@ -113,7 +113,7 @@ function goToAreaList(area) {
   areaEl.classList.add('d-none');
   searchMealsByName('filter', 'a', area);
   // desc.classList.add('d-none');
-desc.classList.add('d-none');
+  desc.classList.add('d-none');
   // console.log(area);
   $('.loading-screen').fadeOut(300);
 }
@@ -312,18 +312,21 @@ function validateName() {
 
   if (inputRegex.name.test(nameValue)) {
     document.getElementById('nameAlert').classList.add('d-none');
+    return true;
   } else {
     document.getElementById('nameAlert').classList.remove('d-none');
+    return false;
   }
 }
-
 function validateEmail() {
   let emailValue = emailInput.value;
 
   if (inputRegex.email.test(emailValue)) {
     document.getElementById('EmailAlert').classList.add('d-none');
+    return true;
   } else {
     document.getElementById('EmailAlert').classList.remove('d-none');
+    return false;
   }
 }
 function validatePhone() {
@@ -331,8 +334,10 @@ function validatePhone() {
 
   if (inputRegex.phone.test(phoneValue)) {
     document.getElementById('phoneAlert').classList.add('d-none');
+    return true;
   } else {
     document.getElementById('phoneAlert').classList.remove('d-none');
+    return false;
   }
 }
 function validateAge() {
@@ -340,8 +345,10 @@ function validateAge() {
 
   if (inputRegex.age.test(ageValue)) {
     document.getElementById('AgeAlert').classList.add('d-none');
+    return true;
   } else {
     document.getElementById('AgeAlert').classList.remove('d-none');
+    return false;
   }
 }
 function validatePass() {
@@ -349,8 +356,10 @@ function validatePass() {
 
   if (inputRegex.password.test(passValue)) {
     document.getElementById('passAlert').classList.add('d-none');
+  return true;
   } else {
     document.getElementById('passAlert').classList.remove('d-none');
+    return false;
   }
 }
 function validateRePass() {
@@ -359,10 +368,28 @@ function validateRePass() {
 
   if (repassValue === passValue && repassValue != '') {
     document.getElementById('repassAlert').classList.add('d-none');
+    return true;
   } else {
     document.getElementById('repassAlert').classList.remove('d-none');
+    return false;
   }
 }
+
+function validateForm() {
+if (validateName() && validateEmail() && validatePhone() && validateAge() && validatePass() && validateRePass()) {
+  submitBtn.removeAttribute('disabled');
+} else {
+  submitBtn.setAttribute('disabled', 'true');
+}
+}
+
+// ==================== Input Event Listeners ====================//
+nameInput.addEventListener('input', validateForm);
+emailInput.addEventListener('input', validateForm);
+phoneInput.addEventListener('input', validateForm);
+ageInput.addEventListener('input', validateForm);
+password.addEventListener('input', validateForm);
+rePassword.addEventListener('input', validateForm);
 
 nameInput.addEventListener('input', validateName);
 emailInput.addEventListener('input', validateEmail);
@@ -379,6 +406,7 @@ submitBtn.addEventListener('click', () => {
   rePassword.value = '';
 });
 
+ 
 // ==================== Event Listeners ====================//
 btnOpen.addEventListener('click', () => {
   nav.classList.add('active');
