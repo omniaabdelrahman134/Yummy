@@ -415,7 +415,7 @@ search_by_name.addEventListener('input', () => {
 search_by_letter.addEventListener('input', () => {
   let letter = search_by_letter.value.toLowerCase().slice(0, 1);
 
-  searchMealsByName('search', 's', letter);
+  searchMealsByName('search', 'f', letter);
   // console.log(name);
 });
 
