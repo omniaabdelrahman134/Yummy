@@ -23,6 +23,7 @@ const nameInput = document.getElementById('inputName');
 const emailInput = document.getElementById('inputEmail');
 const phoneInput = document.getElementById('inputPhone');
 const ageInput = document.getElementById('inputAge');
+const desc = document.getElementById('desc');
 
 let descriptionHTml = document.getElementById('description');
 let mealsHtml = document.getElementById('meals');
@@ -87,7 +88,7 @@ async function searchMealsByName(tool = 'search', letters = 's', item = '') {
   contactElements.classList.add('d-none');
   catElements.classList.add('d-none');
   ingredinetsElements.classList.add('d-none');
-  descriptionHTml.classList.remove('d-none'); 
+  desc.classList.add('d-none');
 
   mealsHtml.innerHTML = box;
   mealsHtml.classList.remove('d-none');
@@ -111,13 +112,14 @@ function goToAreaList(area) {
   mealsHtml.classList.remove('d-none');
   areaEl.classList.add('d-none');
   searchMealsByName('filter', 'a', area);
-  console.log(area);
+  // desc.classList.add('d-none');
+desc.classList.add('d-none');
+  // console.log(area);
   $('.loading-screen').fadeOut(300);
 }
 
 function goToIngredinetsList(ingredient) {
   $('.loading-screen').fadeIn(300);
-
   mealsHtml.classList.remove('d-none');
   ingredinetsElements.classList.add('d-none');
   searchMealsByName('filter', 'i', ingredient);
@@ -135,6 +137,9 @@ function dispalyDescription(idx) {
       ingredients += `<li class=" alert alert-info m-2 p-1">${ingredient}</li>`;
     }
   }
+  searchBtn.classList.add('d-none');
+  mealsHtml.classList.add('d-none');
+  desc.classList.remove('d-none');
 
   let box = `<div class="col-md-4">
                     <img src="${idx.strMealThumb}" alt="${
@@ -160,8 +165,6 @@ function dispalyDescription(idx) {
                     }" target="_blank"><button class="btn btn-danger text-white text-capitalize">youtube</button></a>
                 </div>`;
 
-  mealsHtml.classList.add('d-none');
-  searchBtn.classList.add('d-none');
   descriptionHTml.innerHTML = box;
   $('.loading-screen').fadeOut(300);
 }
@@ -195,7 +198,7 @@ async function displayCategories() {
   ingredinetsElements.classList.add('d-none');
   areaEl.classList.add('d-none');
   contactElements.classList.add('d-none');
-  descriptionHTml.classList.add('d-none');
+  desc.classList.add('d-none');
 
   let box = ``;
 
@@ -242,7 +245,7 @@ async function displayAreas() {
   ingredinetsElements.classList.add('d-none');
   contactElements.classList.add('d-none');
   catElements.classList.add('d-none');
-  descriptionHTml.classList.add('d-none');
+  desc.classList.add('d-none');
 
   let box = ``;
   for (let i = 0; i < areasList.length; i++) {
@@ -277,7 +280,7 @@ async function displayIngredients() {
   areaEl.classList.add('d-none');
   contactElements.classList.add('d-none');
   catElements.classList.add('d-none');
-  descriptionHTml.classList.add('d-none');
+  desc.classList.add('d-none');
 
   let box = ``;
   for (let i = 0; i < ingredientsList.length; i++) {
@@ -395,8 +398,8 @@ btnOpen.addEventListener('click', () => {
 searchItem.addEventListener('click', () => {
   searchBtn.classList.remove('d-none');
   CloseNav();
-  mealsHtml.classList.remove('d-none');       // meals should show
-  descriptionHTml.classList.add('d-none');
+  mealsHtml.classList.remove('d-none'); // meals should show
+  desc.classList.add('d-none');
   catElements.classList.add('d-none');
   areaEl.classList.add('d-none');
   ingredinetsElements.classList.add('d-none');
@@ -440,7 +443,7 @@ contactItem.addEventListener('click', () => {
 
   mealsHtml.classList.add('d-none');
   searchBtn.classList.add('d-none');
-  descriptionHTml.classList.add('d-none');
+  desc.classList.add('d-none');
   ingredinetsElements.classList.add('d-none');
   areaEl.classList.add('d-none');
   catElements.classList.add('d-none');
