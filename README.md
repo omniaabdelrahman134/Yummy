@@ -1,41 +1,34 @@
+# Yummy
 
- 😋 Yummy – Meal Explorer Web App
-
-Yummy is a responsive web application that allows users to explore meals and recipes dynamically using real-time API data.
-
-Live Demo
-
-🔗 (https://yummy-ebon.vercel.app/)
+Yummy is a dynamic meals web application built using **HTML**, **CSS**, **JavaScript**, and **Bootstrap**.  
+The project integrates with a public meals API to allow users to search and explore recipes by name, first letter, category, area, and ingredients.
 
 <img width="1899" height="931" alt="image" src="https://github.com/user-attachments/assets/f32133cc-fd0c-4810-9211-0d6d9b0451ec" />
 
 
- 🛠️ Built With
+## Features
+- Search meals by **name**
+- Search meals by **first letter**
+- Browse meals by **category**
+- Browse meals by **area**
+- Browse meals by **ingredients**
+- Display detailed meal information (instructions, tags, source links)
+- Responsive layout using **Bootstrap**
+- Loading screen animation
+- Smooth sidebar navigation menu
 
-* HTML5
-* CSS3
-* JavaScript (ES6)
-* Bootstrap 5
-* TheMealDB REST API
+## Technologies Used
+- HTML5  
+- CSS3  
+- JavaScript (ES6)  
+- Bootstrap 5  
+- REST API Integration  
 
- ✨ Features
-
-* Search meals by name
-* Search meals by first letter
-* Filter meals by category
-* Browse meals by area
-* Explore ingredients
-* View detailed meal instructions
-
- 📱 Responsive Design
-
-The application is fully responsive and works smoothly on desktop, tablet, and mobile devices.
-
- 📚 What I Learned
-
-* Working with REST APIs
-* Handling asynchronous JavaScript (fetch / async-await)
-* DOM manipulation
-* Responsive layouts using Bootstrap
-
----
+## What I Practiced
+- Working with **REST APIs**
+- Using **fetch()** to handle asynchronous data
+- DOM manipulation with JavaScript
+- Handling user input dynamically
+- Creating reusable UI components
+- Managing loading states
+- Improving responsive layouts
